@@ -1,0 +1,77 @@
+@keyframes pulse {
+    from {opacity: 0.0;
+        font-size: 100%;}
+    to {opacity: 1.0;
+        font-size: 100%;}}
+body {text-align:center; background-color: #e6eff6}
+body {color:black;font-family: 'Kavivanar', cursive;}
+table {margin: auto;border: 1px solid black}
+td {border: 1px solid #ccc}
+#Top {border:10px ridge #ccc; margin:auto; width:300px; padding: 5px}
+h3 {color:red; animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+a:hover, a:active, a:focus {background-color:green;}
+body {margin:0;}
+
+#bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:darkslategray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.bat {
+    float: left;
+}
+
+.bat a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.bat a:hover:not(.active) {
+    background-color: green;
+}
+
+.active {
+    background-color: darkslategray;
+}
+body {
+    padding:20px;
+    margin-top:30px;
+    height:1500px;
+}
+}
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
