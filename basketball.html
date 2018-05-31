@@ -22,11 +22,12 @@
     <tr>
         <td>
             <p id="q1" onclick="myFunction1()">200</p><br>
-            <label>
-                Your answer:
-                <input id="answer1" type="text">
-            </label>
-            <button type="submit">Check me</button>
+            <fieldset>
+            <label><input name="question1" value="usa" type="radio">The United States</label><br>
+            <label><input name="question1" value="aus" type="radio">Australia</label><br>
+            <label><input name="question1" value="fra" type="radio">France</label><br>
+            <label><input name="question1" value="eng" type="radio">England</label><br>
+            </fieldset>
         </td>
         <td>
             <p id="q2" onclick="myFunction2()">200</p><br>
@@ -214,14 +215,58 @@ function getScores() {
     function myFunction12() {
         document.getElementById("q12").innerHTML = "What is Jake's last name?";
         }
-    if (answer1 === "Jacob" || answer1 === "jacob") {
-    score += 200
-    }
-    if (answer1 && answer2 && answer3 && answer4 && answer5 && answer6 && answer7 && answer8 && answer9 && answer10 && answer11 && answer12) {
-    insertScore(playerName,score)
-    score = 0
-    }
-    getScore()
+    var resultsDiv = document.getElementById("results");
+      // answer1 stores whatever <input> element that they checked
+      //  or null if they didn't check any answer
+      var answer1 = document.querySelector('[name="question1"]:checked');
+      var answer2 = document.querySelector('[name="question2"]:checked');
+      var answer3 = document.querySelector('[name="question3"]:checked');
+      var answer4 = document.querySelector('[name="question4"]:checked');
+      var answer5 = document.querySelector('[name="question5"]:checked');
+      var answer6 = document.querySelector('[name="question6"]:checked');
+      if (!answer1 || !answer2 || !answer3 || !answer4 || !answer5 || !answer6) {
+        resultsDiv.innerHTML = "You didn't mark an answer for all of the questions! Sadface";
+      } else {
+        if (answer1.value === "usa") {
+           score += 5;
+        }
+        if (answer2.value === "mad") {
+          score += 5;
+        }
+        if (answer3.value === "mac") {
+          score += 5;
+        }
+        if (answer4.value === "rme") {
+          score += 5;
+        }
+        if (answer5.value === "flt") {
+          score += 5;
+        }
+        if (answer6.value === "aus") {
+          score += 5;
+        }
+        // answer1.value is the value attribute of the checked <input>
+        if (answer1.value === "usa" && answer2.value === "mad" && answer3.value === "mac" && answer4.value === "rme" && answer5.value === "flt" && answer6.value === "aus") {
+          resultsDiv.innerHTML = "You got it! Your score was " + score + " out of 30.";
+          insertScore(playerName,score)
+          score = 0
+        } 
+        else if (answer1.value === "usa" || answer2.value === "mad" || answer3.value === "mac" || answer4.value === "rme" || answer5.value === "flt" || answer6.value === "aus") {
+          resultsDiv.innerHTML = "You got some of the question right! Your score was " + score + " out of 30. Please try again.";
+          insertScore(playerName,score)
+          score = 0
+        }
+        else {
+          resultsDiv.innerHTML = "You got all questions wrong. Your score was " + score + " out of 30. Try again!";
+          insertScore(playerName,score)
+          score = 0
+        }
+        getScore()
+  
+      }
+    });
+    
+    
     </script>
 </body>
 </html>
