@@ -139,6 +139,42 @@
    Loading...
  </ol>
 <script>
+    function myFunction1() {
+        document.getElementById("q1").innerHTML = "What is Jake's first name?";
+        }
+    function myFunction2() {
+        document.getElementById("q2").innerHTML = "What is Jake's middle name?";
+        }
+    function myFunction3() {
+        document.getElementById("q3").innerHTML = "What is Jake's last name?";
+        }
+    function myFunction4() {
+        document.getElementById("q4").innerHTML = "What is Jake's first name?";
+        }
+    function myFunction5() {
+        document.getElementById("q5").innerHTML = "What is Jake's middle name?";
+        }
+    function myFunction6() {
+        document.getElementById("q6").innerHTML = "What is Jake's last name?";
+        }
+    function myFunction7() {
+        document.getElementById("q7").innerHTML = "What is Jake's first name?";
+        }
+    function myFunction8() {
+        document.getElementById("q8").innerHTML = "What is Jake's middle name?";
+        }
+    function myFunction9() {
+        document.getElementById("q9").innerHTML = "What is Jake's last name?";
+        }
+    function myFunction10() {
+        document.getElementById("q10").innerHTML = "What is Jake's first name?";
+        }
+    function myFunction11() {
+        document.getElementById("q11").innerHTML = "What is Jake's middle name?";
+        }
+    function myFunction12() {
+        document.getElementById("q12").innerHTML = "What is Jake's last name?";
+        }
     var score = 0
     function insertScore(player, score) {
  var url = '/scores/insert';
@@ -179,43 +215,6 @@ function getScores() {
     quizForm.addEventListener("submit", function(event) {
       event.preventDefault();
       var playerName = document.getElementById('player').value || 'Anon';
-      
-    function myFunction1() {
-        document.getElementById("q1").innerHTML = "What is Jake's first name?";
-        }
-    function myFunction2() {
-        document.getElementById("q2").innerHTML = "What is Jake's middle name?";
-        }
-    function myFunction3() {
-        document.getElementById("q3").innerHTML = "What is Jake's last name?";
-        }
-    function myFunction4() {
-        document.getElementById("q4").innerHTML = "What is Jake's first name?";
-        }
-    function myFunction5() {
-        document.getElementById("q5").innerHTML = "What is Jake's middle name?";
-        }
-    function myFunction6() {
-        document.getElementById("q6").innerHTML = "What is Jake's last name?";
-        }
-    function myFunction7() {
-        document.getElementById("q7").innerHTML = "What is Jake's first name?";
-        }
-    function myFunction8() {
-        document.getElementById("q8").innerHTML = "What is Jake's middle name?";
-        }
-    function myFunction9() {
-        document.getElementById("q9").innerHTML = "What is Jake's last name?";
-        }
-    function myFunction10() {
-        document.getElementById("q10").innerHTML = "What is Jake's first name?";
-        }
-    function myFunction11() {
-        document.getElementById("q11").innerHTML = "What is Jake's middle name?";
-        }
-    function myFunction12() {
-        document.getElementById("q12").innerHTML = "What is Jake's last name?";
-        }
     var resultsDiv = document.getElementById("results");
       // answer1 stores whatever <input> element that they checked
       //  or null if they didn't check any answer
