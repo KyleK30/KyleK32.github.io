@@ -217,7 +217,10 @@ function getScores() {
     if (answer1 === "Jacob" || answer1 === "jacob") {
     score += 200
     }
-    
+    if (answer1 && answer2 && answer3 && answer4 && answer5 && answer6 && answer7 && answer8 && answer9 && answer10 && answer11 && answer12) {
+    insertScore(playerName,score)
+    score = 0
+    }
     getScore()
     </script>
 </body>
