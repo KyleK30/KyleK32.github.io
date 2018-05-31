@@ -123,8 +123,61 @@
             <button type="submit">Check me</button>
         </td>
     </tr>
+    <label>
+     Your name:
+     <input id="player" type="text">
+   </label>
+
+    <button type="submit">Check me</button>
+  </form>
+  
+  <div id="results"></div>
+   <h4>High scores</h4>
+ <ol id="scores">
+   Loading...
+ </ol>
 <script>
     var score = 0
+    function insertScore(player, score) {
+ var url = '/scores/insert';
+
+ var request = new XMLHttpRequest();
+ request.addEventListener('load', function () {
+   if (this.status !== 200) {
+     alert('Error!');
+     console.log(this.response);
+   } else {
+     getScores();
+   }
+ });
+ request.open('POST', url, true);
+ request.setRequestHeader('Content-type', 'application/json');
+ var data = {'player': player, 'score': score};
+ request.send(JSON.stringify(data));
+}
+function getScores() {
+ var url = '/scores/top10';
+
+ var request = new XMLHttpRequest();
+ request.addEventListener('load', function () {
+   var scores = JSON.parse(this.responseText);
+   console.log(scores);
+   var scoresDiv = document.getElementById('scores');
+   scoresDiv.innerHTML = '';
+   for (var i = 0; i < scores.length; i++) {
+     scoresDiv.innerHTML += '<li>' + scores[i].player + ': ' + scores[i].score;
+   }
+ });
+ request.open('GET', url, true);
+ request.setRequestHeader('Content-type', 'application/json');
+ request.send();
+}
+    var score = 0
+    var quizForm = document.getElementById("quiz-form");
+    quizForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      var playerName = document.getElementById('player').value || 'Anon';
+      
     function myFunction1() {
         document.getElementById("q1").innerHTML = "What is Jake's first name?";
         }
@@ -164,6 +217,8 @@
     if (answer1 === "Jacob" || answer1 === "jacob") {
     score += 200
     }
+    
+    getScore()
     </script>
 </body>
 </html>
