@@ -24,7 +24,7 @@
             <p id="q1" onclick="myFunction1()">200</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer1" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -32,7 +32,7 @@
             <p id="q2" onclick="myFunction2()">200</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer2" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -40,7 +40,7 @@
             <p id="q3" onclick="myFunction3()">200</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer3" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -50,7 +50,7 @@
             <p id="q4" onclick="myFunction4()">400</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer4" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -58,7 +58,7 @@
             <p id="q5" onclick="myFunction5()">400</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer5" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -66,7 +66,7 @@
             <p id="q6" onclick="myFunction6()">400</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer6" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -76,7 +76,7 @@
             <p id="q7" onclick="myFunction7()">600</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer7" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -84,7 +84,7 @@
             <p id="q8" onclick="myFunction8()">600</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer8" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -92,7 +92,7 @@
             <p id="q9" onclick="myFunction9()">600</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer9" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -102,7 +102,7 @@
             <p id="q10" onclick="myFunction10()">800</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer10" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -110,7 +110,7 @@
             <p id="q11" onclick="myFunction11()">800</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer11" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
@@ -118,12 +118,13 @@
             <p id="q12" onclick="myFunction12()">800</p><br>
             <label>
                 Your answer:
-                <input id="answer" type="text">
+                <input id="answer12" type="text">
             </label>
             <button type="submit">Check me</button>
         </td>
     </tr>
 <script>
+    var score = 0
     function myFunction1() {
         document.getElementById("q1").innerHTML = "What is Jake's first name?";
         }
@@ -160,6 +161,9 @@
     function myFunction12() {
         document.getElementById("q12").innerHTML = "What is Jake's last name?";
         }
+    if (answer1 === "Jacob" || answer1 === "jacob") {
+    score += 200
+    }
     </script>
 </body>
 </html>
